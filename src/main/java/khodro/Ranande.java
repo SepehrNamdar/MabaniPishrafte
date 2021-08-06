@@ -1,4 +1,4 @@
-package mashin;
+package khodro;
 
 class Ranande {
 }
