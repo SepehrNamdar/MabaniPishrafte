@@ -1,8 +1,8 @@
 package khodro;
 
-public class Mashin {   // DRY : Don't Reapet Yourself
+// Mashin yek khodro ast : Car is a Vehicle
+public class Mashin extends Khodro {   // DRY : Don't Repeat Yourself
 
-    boolean ayaRoshanAst; // false
     boolean ayaDarBazAst; // false
     String mark;
     Ranande ranande;
@@ -12,14 +12,6 @@ public class Mashin {   // DRY : Don't Reapet Yourself
 
     public Mashin(String mark) {
         this.mark = mark;
-    }
-
-    public void roshan() {
-        ayaRoshanAst = true;
-    }
-
-    void khamoush() {
-        ayaRoshanAst = false;
     }
 
     void bazKardanDar() {
