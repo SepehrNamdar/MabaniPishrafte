@@ -1,0 +1,4 @@
+package mashin;
+
+class Ranande {
+}
