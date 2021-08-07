@@ -1,7 +1,7 @@
 package khodro;
 
 // Mashin yek khodro ast : Car is a Vehicle
-public class Mashin extends Khodro {   // DRY : Don't Repeat Yourself
+public class Mashin extends Khodro implements SandoghDar, Gearbox {   // DRY : Don't Repeat Yourself
 
     boolean ayaDarBazAst; // false
     String mark;
@@ -28,5 +28,15 @@ public class Mashin extends Khodro {   // DRY : Don't Repeat Yourself
         } else {
             return false;
         }
+    }
+
+    @Override
+    public String typeDande() {
+        return "Automatic";
+    }
+
+    @Override
+    public int gonjayeshSandogh() {
+        return 100;
     }
 }
