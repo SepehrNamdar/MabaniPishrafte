@@ -3,7 +3,7 @@ package khodro;
 public abstract class Khodro {
 
     protected void protectedMethod() {
-        System.out.println("Thid method is protected");
+        System.out.println("This method is protected");
     }
 
     protected boolean ayaRoshanAst;
