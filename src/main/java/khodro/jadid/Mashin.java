@@ -6,7 +6,9 @@ import khodro.Ranande;
 import khodro.SandoghDar;
 
 // Mashin yek khodro ast : Car is a Vehicle
-public class Mashin extends Khodro implements SandoghDar, Gearbox {   // DRY : Don't Repeat Yourself
+public class Mashin extends Khodro implements SandoghDar, Gearbox {
+
+    public static int tedadeForosh;
 
     private boolean ayaDarBazAst; // false
     private String mark;
