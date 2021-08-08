@@ -1,13 +1,18 @@
-package khodro;
+package khodro.jadid;
+
+import khodro.Gearbox;
+import khodro.Khodro;
+import khodro.Ranande;
+import khodro.SandoghDar;
 
 // Mashin yek khodro ast : Car is a Vehicle
 public class Mashin extends Khodro implements SandoghDar, Gearbox {   // DRY : Don't Repeat Yourself
 
-    boolean ayaDarBazAst; // false
-    String mark;
-    int gonjayeshSandogh;
-    String noeDande;
-    Ranande ranande;
+    private boolean ayaDarBazAst; // false
+    private String mark;
+    private int gonjayeshSandogh;
+    private String noeDande;
+    private Ranande ranande;
 
     public Mashin() {
     }
@@ -30,7 +35,9 @@ public class Mashin extends Khodro implements SandoghDar, Gearbox {   // DRY : D
         ayaDarBazAst = false;
     }
 
+    @Override
     public boolean ayaDarHaleHarekatAst() {
+        protectedMethod();
         if (!ayaDarBazAst && ayaRoshanAst) {
             return true;
         } else {
@@ -45,11 +52,11 @@ public class Mashin extends Khodro implements SandoghDar, Gearbox {   // DRY : D
 
     @Override
     public String typeDande() {
-        return "Automatic";
+        return noeDande;
     }
 
     @Override
     public int gonjayeshSandogh() {
-        return 100;
+        return gonjayeshSandogh;
     }
 }

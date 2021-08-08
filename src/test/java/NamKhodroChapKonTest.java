@@ -1,7 +1,5 @@
-import khodro.Khodro;
-import khodro.Mashin;
-import khodro.Motor;
-import khodro.NamKhodroChapKon;
+import khodro.*;
+import khodro.jadid.Mashin;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
