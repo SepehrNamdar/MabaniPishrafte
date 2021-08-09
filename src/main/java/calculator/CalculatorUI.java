@@ -1,19 +1,22 @@
+package calculator;
+
 import javax.swing.*;
 
 public class CalculatorUI {
 
-    private static JTextField result;
+    private static JTextField jTextField;
+    private static String adadAval;
 
     public static void main(String... args) {
         JFrame mashinHesab = new JFrame("Mashin Hesab");
 
-        result = new JTextField();
-        result.setBounds(0, 0, 150, 50);
-        result.setEditable(false);
+        jTextField = new JTextField();
+        jTextField.setBounds(0, 0, 150, 50);
+        jTextField.setEditable(false);
 
         JButton cancel = new JButton("C");
         cancel.setBounds(150, 0, 50, 50);
-        cancel.addActionListener(e -> result.setText(""));
+        cancel.addActionListener(e -> jTextField.setText(""));
 
         JButton one = getButton("1", 0, 50);
         JButton two = getButton("2", 50, 50);
@@ -21,6 +24,10 @@ public class CalculatorUI {
 
         JButton plus = new JButton("+");
         plus.setBounds(150, 50, 50, 50);
+        plus.addActionListener(e -> {
+            adadAval = jTextField.getText();
+            jTextField.setText("");
+        });
 
         JButton four = getButton("4", 0, 100);
         JButton five = getButton("5", 50, 100);
@@ -41,12 +48,17 @@ public class CalculatorUI {
 
         JButton equal = new JButton("=");
         equal.setBounds(100, 200, 50, 50);
+        equal.addActionListener(e -> {
+            Calculator calculator = new Calculator();
+            String addResult = calculator.add(adadAval, jTextField.getText());
+            jTextField.setText(addResult);
+        });
 
         JButton division = new JButton("/");
         division.setBounds(150, 200, 50, 50);
 
         mashinHesab.add(cancel);
-        mashinHesab.add(result);
+        mashinHesab.add(jTextField);
         mashinHesab.add(one);
         mashinHesab.add(two);
         mashinHesab.add(three);
@@ -72,7 +84,7 @@ public class CalculatorUI {
     private static JButton getButton(String label, int xPosition, int yPosition) {
         JButton button = new JButton(label);
         button.setBounds(xPosition, yPosition, 50, 50);
-        button.addActionListener(event -> result.setText(result.getText() + button.getText()));
+        button.addActionListener(event -> jTextField.setText(jTextField.getText() + button.getText()));
         return button;
     }
 }
