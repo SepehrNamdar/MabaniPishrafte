@@ -3,6 +3,12 @@ package khodro;
 public class Kashti extends Khodro {
 
     @Override
+    public String toString() {
+        //return "Kashti{}";
+        return super.toString();
+    }
+
+    @Override
     public boolean ayaDarHaleHarekatAst() {
         protectedMethod();
         return false;

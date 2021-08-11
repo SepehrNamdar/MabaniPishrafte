@@ -4,6 +4,11 @@ import static java.lang.System.out;
 
 public abstract class Khodro {
 
+    @Override
+    public String toString() {
+        return "Khodro{}";
+    }
+
     protected final void protectedMethod() {
         out.println("This method is protected");
     }
