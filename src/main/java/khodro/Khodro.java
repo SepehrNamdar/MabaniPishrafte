@@ -4,7 +4,7 @@ import static java.lang.System.out;
 
 public abstract class Khodro {
 
-    protected void protectedMethod() {
+    protected final void protectedMethod() {
         out.println("This method is protected");
     }
 
