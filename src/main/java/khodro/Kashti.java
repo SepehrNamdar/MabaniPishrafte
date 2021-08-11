@@ -1,6 +1,7 @@
 package khodro;
 
 public class Kashti extends Khodro {
+
     @Override
     public boolean ayaDarHaleHarekatAst() {
         protectedMethod();
