@@ -28,4 +28,19 @@ public class Kashti extends Khodro {
     public void printReferenceObject(Object object) {
         out.println(object);
     }
+
+    // Overloading method ba taghir type parametr vorodi : Object -> String
+    public void printReferenceObject(String object) {
+        out.println(object);
+    }
+
+    // Overloading method ba taghir tedad parametr vorodi
+    public void printReferenceObject(String object, int newParam) {
+        out.println(object);
+    }
+
+    // Overloading kar nemikone agar type bargashty method taghir kone
+//    public String printReferenceObject(String object, int newParam) {
+//        return "";
+//    }
 }
