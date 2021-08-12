@@ -3,14 +3,14 @@ package collection.list;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class ArrayListTest {
+public class ListTest {
 
     @Test
     void Should_Be_Empty_When_Created() {
@@ -20,8 +20,28 @@ public class ArrayListTest {
     }
 
     @Test
+    void Should_Sort_A_List() {
+        List<String> animals = new LinkedList<>();
+        animals.add("Dog");
+        animals.add("Cat");
+        animals.add("Cat");
+        animals.add("Cat");
+        animals.add("Rabbit");
+
+        Collections.sort(animals);
+
+        LinkedList<String> sortedAnimals = new LinkedList<>();
+        sortedAnimals.add("Cat");
+        sortedAnimals.add("Cat");
+        sortedAnimals.add("Cat");
+        sortedAnimals.add("Dog");
+        sortedAnimals.add("Rabbit");
+        assertThat(animals).isEqualTo(sortedAnimals);
+    }
+
+    @Test
     void Should_Be_Immutable() {
-        List<String> animals = new ArrayList<>();
+        List<String> animals = new LinkedList<>();
         animals.add("Dog");
         animals.add("Cat");
         animals.add("Cat");
@@ -38,7 +58,7 @@ public class ArrayListTest {
 
     @Test
     void Should_Reverse_A_List() {
-        List<String> animals = new ArrayList<>();
+        List<String> animals = new LinkedList<>();
         animals.add("Dog");
         animals.add("Cat");
         animals.add("Cat");
@@ -73,7 +93,7 @@ public class ArrayListTest {
         arrayListNumbers.add(111);
 
         // Then
-        List<Integer> expectedList = new ArrayList<>();
+        List<Integer> expectedList = new LinkedList<>();
         expectedList.add(1);    // index 0
         //expectedList.add(2);    // index 1
         expectedList.add(66);   // index 2
@@ -87,7 +107,7 @@ public class ArrayListTest {
     class Converter {
 
         public List<Integer> convertToArrayList(int[] arrayNumbers) {
-            List<Integer> listNumbers = new ArrayList<>();
+            List<Integer> listNumbers = new LinkedList<>();
             for (int number : arrayNumbers) {
                 listNumbers.add(number);
             }
