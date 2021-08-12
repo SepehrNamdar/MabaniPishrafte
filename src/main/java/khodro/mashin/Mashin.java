@@ -1,4 +1,4 @@
-package khodro.jadid;
+package khodro.mashin;
 
 import khodro.Gearbox;
 import khodro.Khodro;
@@ -13,7 +13,7 @@ public class Mashin extends Khodro implements SandoghDar, Gearbox {
     private boolean ayaDarBazAst; // false
     private String mark;
     private int gonjayeshSandogh;
-    private String noeDande;
+    private Dande noeDande;
     private Ranande ranande;
 
     public Mashin() {
@@ -23,7 +23,7 @@ public class Mashin extends Khodro implements SandoghDar, Gearbox {
         this.mark = mark;
     }
 
-    public Mashin(String mark, int gonjayeshSandogh, String noeDande) {
+    public Mashin(String mark, int gonjayeshSandogh, Dande noeDande) {
         this.mark = mark;
         this.gonjayeshSandogh = gonjayeshSandogh;
         this.noeDande = noeDande;
@@ -53,7 +53,7 @@ public class Mashin extends Khodro implements SandoghDar, Gearbox {
     }
 
     @Override
-    public String typeDande() {
+    public Dande typeDande() {
         return noeDande;
     }
 
@@ -68,7 +68,7 @@ public class Mashin extends Khodro implements SandoghDar, Gearbox {
                 "ayaDarBazAst=" + this.ayaDarBazAst +
                 ", mark='" + this.mark + '\'' +
                 ", gonjayeshSandogh=" + this.gonjayeshSandogh +
-                ", noeDande='" + this.noeDande + '\'' +
+                ", noeDande='" + this.noeDande.toPersian() + " - " + this.noeDande.toFrench() + '\'' +
                 ", ranande=" + this.ranande +
                 '}';
     }
