@@ -42,6 +42,11 @@ public class SetTest {
         for (String animal : animals) {
             out.println(animal);
         }
+
+        Object[] animalsInOrder = animals.toArray();
+        assertThat(animalsInOrder[0]).isEqualTo("Dog");
+        assertThat(animalsInOrder[1]).isEqualTo("Cat");
+        assertThat(animalsInOrder[2]).isEqualTo("Rabbit");
     }
 
     @Test
@@ -54,5 +59,10 @@ public class SetTest {
         for (String animal : animals) {
             out.println(animal);
         }
+
+        Object[] animalsInOrder = animals.toArray();
+        assertThat(animalsInOrder[0]).isEqualTo("Cat");
+        assertThat(animalsInOrder[1]).isEqualTo("Dog");
+        assertThat(animalsInOrder[2]).isEqualTo("Rabbit");
     }
 }
