@@ -5,6 +5,8 @@ import khodro.Khodro;
 import khodro.Ranande;
 import khodro.SandoghDar;
 
+import java.util.Objects;
+
 // Mashin yek khodro ast : Car is a Vehicle
 public class Mashin extends Khodro implements SandoghDar, Gearbox {
 
@@ -71,5 +73,20 @@ public class Mashin extends Khodro implements SandoghDar, Gearbox {
                 ", noeDande='" + this.noeDande.toPersian() + " - " + this.noeDande.toFrench() + '\'' +
                 ", ranande=" + this.ranande +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Mashin mashin = (Mashin) o;
+        return gonjayeshSandogh == mashin.gonjayeshSandogh
+                && Objects.equals(mark, mashin.mark)
+                && noeDande == mashin.noeDande;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(mark, gonjayeshSandogh, noeDande);
     }
 }
