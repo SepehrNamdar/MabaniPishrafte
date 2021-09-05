@@ -7,8 +7,10 @@ import khodro.SandoghDar;
 
 import java.util.Objects;
 
+import static khodro.mashin.Dande.MANUAL;
+
 // Mashin yek khodro ast : Car is a Vehicle
-public class Mashin extends Khodro implements SandoghDar, Gearbox {
+public class Mashin extends Khodro implements SandoghDar, Gearbox, Comparable<Mashin> {
 
     public static int tedadeForosh;
 
@@ -88,5 +90,19 @@ public class Mashin extends Khodro implements SandoghDar, Gearbox {
     @Override
     public int hashCode() {
         return Objects.hash(mark, gonjayeshSandogh, noeDande);
+    }
+
+    @Override
+    public int compareTo(Mashin mashinDigar) {
+        int moghayeseBarMabnayeGonjayeshSandogh =
+                Integer.compare(this.gonjayeshSandogh, mashinDigar.gonjayeshSandogh);
+        if (moghayeseBarMabnayeGonjayeshSandogh == 0) { // gonjayesh har 2 mashin ba ham bararbar hast
+            if (Objects.equals(this.noeDande, MANUAL)) {
+                return -1;
+            } else {
+                return 1;
+            }
+        }
+        return moghayeseBarMabnayeGonjayeshSandogh;
     }
 }
