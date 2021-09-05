@@ -1,6 +1,7 @@
 package compare;
 
 import khodro.mashin.Mashin;
+import khodro.mashin.MashinComparator;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -43,6 +44,28 @@ public class CompareMashinTest {
         expectedMashins.add(bmw_3);
         expectedMashins.add(bmw_2);
         expectedMashins.add(bmw_1);
+        assertThat(mashins).isEqualTo(expectedMashins);
+    }
+
+    @Test
+    void should_sort_mashins_by_mark() {
+        Mashin bmw = new Mashin("BMW", 150, MANUAL);
+        Mashin mercedes = new Mashin("Mercedes", 100, AUTOMATIC);
+        Mashin paykan = new Mashin("Paykan", 50, AUTOMATIC);
+        Mashin alfaRomeo = new Mashin("Alfa Romeo", 50, MANUAL);
+        List<Mashin> mashins = new ArrayList<>();
+        mashins.add(bmw);
+        mashins.add(mercedes);
+        mashins.add(paykan);
+        mashins.add(alfaRomeo);
+
+        Collections.sort(mashins, new MashinComparator());
+
+        List<Mashin> expectedMashins = new ArrayList<>();
+        expectedMashins.add(alfaRomeo);
+        expectedMashins.add(bmw);
+        expectedMashins.add(mercedes);
+        expectedMashins.add(paykan);
         assertThat(mashins).isEqualTo(expectedMashins);
     }
 }
