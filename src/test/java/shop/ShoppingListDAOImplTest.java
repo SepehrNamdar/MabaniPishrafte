@@ -11,6 +11,7 @@ import static java.sql.DriverManager.getConnection;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
+// Integration Test
 public class ShoppingListDAOImplTest {
 
     public static final String HOST = "jdbc:mysql://localhost:3306/shop";

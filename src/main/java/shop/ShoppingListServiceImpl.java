@@ -4,10 +4,16 @@ import java.util.List;
 
 public class ShoppingListServiceImpl implements ShoppingListService {
 
+    final ShoppingListDAO shoppingListDAO;
+
+    // Dependency Injection
+    public ShoppingListServiceImpl(ShoppingListDAO shoppingListDAO) {
+        this.shoppingListDAO = shoppingListDAO;
+    }
+
     @Override
     public List<Item> findAllItems() {
         // Get all items from database : Any logic
-        final ShoppingListDAO shoppingListDAO = new ShoppingListDAOImpl();
         return shoppingListDAO.findAllItems();
     }
 
@@ -18,7 +24,6 @@ public class ShoppingListServiceImpl implements ShoppingListService {
         }
 
         // save all items in database
-        final ShoppingListDAO shoppingListDAO = new ShoppingListDAOImpl();
         shoppingListDAO.saveItems(items);
     }
 }
