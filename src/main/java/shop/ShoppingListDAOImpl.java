@@ -17,6 +17,10 @@ public class ShoppingListDAOImpl implements ShoppingListDAO {
     public static final String INSERT_SQL = "INSERT INTO item (name, quantity) VALUES (?, ?)";
     public static final String SELECT_SQL = "SELECT * FROM item";
 
+    public ShoppingListDAOImpl() {
+        // TODO : use properties file
+    }
+
     @Override
     public List<Item> findAllItems() {
         List<Item> items = new LinkedList<>();
