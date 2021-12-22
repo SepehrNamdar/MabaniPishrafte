@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -37,7 +36,7 @@ public class GenericsTest {
         final Integer[] integers = gt.toArray(new Integer[0], "s");
     }
 
-    class GenericMethod<E> {
+    static class GenericMethod<E> {
         <S, T extends E> T[] toArray(T[] a, S s) {
             return null;
         }
