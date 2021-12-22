@@ -1,10 +1,10 @@
 package khodro;
 
-import khodro.*;
 import khodro.mashin.Dande;
 import khodro.mashin.Mashin;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class NamKhodroChapKonTest {
 
@@ -21,6 +21,7 @@ public class NamKhodroChapKonTest {
         // When
         String listNamKhodroha = namKhodroChapKon.execute();
 
-        Assertions.assertEquals("Benz-Volvo-Motor-Kashti" ,listNamKhodroha);
+        // Then
+        assertEquals("Benz-Volvo-Motor-Kashti", listNamKhodroha);
     }
 }
